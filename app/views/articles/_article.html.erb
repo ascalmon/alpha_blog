@@ -1,0 +1,38 @@
+
+
+<table border="solid 1px">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Creation information</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% obj.each do |article| %>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <div class="well well-lg">
+            <div class="article-title">
+               <tr>
+                  <td><%= article.title %></td>
+                  <td><%= article.description %></td>
+                  <td><small>Created by <%= article.user.username if article.user%>,
+                    <%= time_ago_in_words(article.created_at) %> ago,
+                    last update: <%= time_ago_in_words(article.updated_at) %> ago </small>
+                  </td>
+                  <td><%= link_to 'Show', article %></td>
+                  <td><%= link_to 'Edit', edit_article_path(article) %></td>
+                  <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    <% end %>
+  </tbody>
+</table>
+

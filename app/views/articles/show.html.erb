@@ -1,14 +1,25 @@
 <p id="notice"><%= notice %></p>
+<h2 align="center">
+  Title: <%= @article.title %>
+</h2>
+<div class="row">
+  <% if @article.user %>
+    <ul style="list-style-type:none">
+      debugger
+      <li> Created by:</li>
+      <li> <%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
+      <li> <%= link_to @article.user.username, user_path(@article.user) %></li>
+      <li> 
+        <small><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %></small>
+      </li>
+    </ul>
+  <% end %>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+  <h4 align="center"><strong>Description:</strong></h4>
+  <%= simple_format(@article.description) %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @article.description %>
-</p>
+
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>

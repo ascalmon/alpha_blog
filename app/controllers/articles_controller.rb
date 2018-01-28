@@ -24,8 +24,9 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
+    
     @article = Article.new(article_params)
-
+    @article.user = User.last
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
