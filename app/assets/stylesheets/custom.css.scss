@@ -3,6 +3,10 @@
 $navbar-default-bg: #80808A;
 body{
   margin: 0px;
+  background-color:red;
+}
+.align_left{
+  
 }
 #logo {
   float: left;
@@ -16,4 +20,19 @@ body{
   
   color: #fff;
   text_decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  background-image: asset-url('praia.png');
+  background-size: cover;
+}
+
+.navbar .navbar-default{
+  background-image: url("assets/images/praia.png");
+  background: url('assets/images/praia.png');
+  background-size: cover;
 }

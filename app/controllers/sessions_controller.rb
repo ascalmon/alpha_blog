@@ -1,7 +1,9 @@
 class SessionsController < ApplicationController
   
   def new
-    flash[:notice] = "You are about to enter in the great world of Wander"
+    #flash[:notice] = "You are about to enter in the great world of Wander"
+   
+      
   end
   
   def create
