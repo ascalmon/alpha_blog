@@ -1,1 +1,19 @@
 @import "bootstrap";
+
+$navbar-default-bg: #80808A;
+body{
+  margin: 0px;
+}
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: gray;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold; 
+}
+#logo:hover{
+  
+  color: #fff;
+  text_decoration: none;
+}
