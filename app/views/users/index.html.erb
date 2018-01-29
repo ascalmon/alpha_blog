@@ -4,6 +4,7 @@
 
   <tbody>
     <div align="center">
+      <%= will_paginate(@users, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
       <% @users.each do |user| %>
         <ul style="list-style-type:none">
           <li> Created by:</li>

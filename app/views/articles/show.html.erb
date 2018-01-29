@@ -2,22 +2,32 @@
 <h2 align="center">
   Title: <%= @article.title %>
 </h2>
+<p align="center">
+  <small>Requested at: <%= @time %></small>
+</p>
 <div class="row">
   <% if @article.user %>
     <ul style="list-style-type:none">
-      debugger
-      <li> Created by:</li>
-      <li> <%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
-      <li> <%= link_to @article.user.username, user_path(@article.user) %></li>
-      <li> 
-        <small><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %></small>
-      </li>
+   
+      <div align="center">
+        <li> Created by:</li>
+        <li> <%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
+        <li> <%= link_to @article.user.username, user_path(@article.user) %></li>
+        <li> <%= "Parametros = #{@parametros}" if @parametros %></li>
+        <li> 
+          <small><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %></small>
+        </li>
+      </div>
+
     </ul>
   <% end %>
 </div>
 
   <h4 align="center"><strong>Description:</strong></h4>
-  <%= simple_format(@article.description) %>
+  <div align="center">
+     <%= simple_format(@article.description) %>
+</div>
+ 
 
 
 
