@@ -37,8 +37,10 @@
               <%= User.find(session[:user_id]).username %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              
-              <a <%= link_to "My events", user_path(User.find(session[:user_id])), class: "nav-link" %></a>
+              <% if User.find(session[:user_id]).username == 'ascalmon'%>
+                 <a <%= link_to "All users", users_path, class: "nav-link" %></a>
+              <% end %>
+              <a <%= link_to "My articles", user_path(User.find(session[:user_id])), class: "nav-link" %></a>
               <div class="dropdown-divider"></div>
               <a <%= link_to "My profile", edit_user_path(User.find(session[:user_id])), class: "nav-link" %></a>
               <div class="dropdown-divider"></div>
