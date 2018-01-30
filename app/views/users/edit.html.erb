@@ -1,6 +1,4 @@
-<h1>Editing User</h1>
-
+<div align="center">
+  <h1>Editing User <%= @user.username.capitalize %></h1>
+</div>
 <%= render 'form', user: @user %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
