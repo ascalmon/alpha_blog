@@ -34,10 +34,12 @@
           <a <%= link_to "Log out", logout_path, class: "nav-link", method: :delete %> </a>
          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= User.find(session[:user_id]).username %>
+              <% current_user.admin? ? user_drop_name = 'Admin' : user_drop_name = current_user.username %>
+              <%= user_drop_name %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <% if User.find(session[:user_id]).username == 'ascalmon'%>
+        
+              <% if current_user.admin? %>
                  <a <%= link_to "All users", users_path, class: "nav-link" %></a>
               <% end %>
               <a <%= link_to "My articles", user_path(User.find(session[:user_id])), class: "nav-link" %></a>
