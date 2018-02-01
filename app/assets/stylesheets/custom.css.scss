@@ -1,12 +1,11 @@
+
 @import "bootstrap";
 
 $navbar-default-bg: #80808A;
 body{
   margin: 0px;
 }
-.align_left{
-  
-}
+
 #logo {
   float: left;
   font-size: 1.7em;
@@ -15,6 +14,8 @@ body{
   letter-spacing: -1px;
   font-weight: bold; 
 }
+
+
 #logo:hover{
   
   color: #fff;
@@ -28,8 +29,46 @@ body{
 .jumbotron {
   background-image: asset-url('praia.png');
   background-size: cover;
+  height: 350px
 }
 
+.jumbotron h1 {
+  color: #fff;
+  text-align: center;
+  margin-bottom:30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.btn-xlarge {
+  font-size: 1.7em;
+  background-color:black;
+}
+
+footer {
+  margin-top:45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a:hover {
+  color: #777;
+}
+
+footer small {
+  float:left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px; 
+}
 .navbar .navbar-default{
   background-image: url("assets/images/praia.png");
   background: url('assets/images/praia.png');
