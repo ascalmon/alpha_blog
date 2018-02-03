@@ -1,9 +1,32 @@
 
 @import "bootstrap";
+@import "font-awesome";
 
 $navbar-default-bg: #80808A;
 body{
   margin: 0px;
+}
+
+.about-page {
+  width: 500px;
+  height: 300px;
+}
+
+.article-item {
+  margin-right: auto;
+  margin-left: auto;
+  width: 460px;
+  height: 200px;
+}
+
+#filtersubmit {
+    position: relative;
+    z-index: 1;
+    left: -25px;
+    top: 1px;
+    color: #7B7B7B;
+    cursor:pointer;
+    width: 0;
 }
 
 #logo {
@@ -18,7 +41,7 @@ body{
 
 #logo:hover{
   
-  color: #fff;
+  background-color: lightgray;
   text_decoration: none;
 }
 
@@ -26,10 +49,23 @@ body{
   text-align: center;
 }
 
+.navbar li a:hover {
+  background-color: lightgray;
+}
+
 .jumbotron {
   background-image: asset-url('praia.png');
   background-size: cover;
   height: 350px
+}
+
+.no_border {
+  border: none;
+  background-color: bg-light;;
+}
+
+.search {
+  font-size: 10px;
 }
 
 .jumbotron h1 {
@@ -53,7 +89,7 @@ footer {
 }
 
 footer a:hover {
-  color: #777;
+  color: lightgray;
 }
 
 footer small {

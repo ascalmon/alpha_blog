@@ -14,7 +14,9 @@
 <div>
   
 </div>
-<h3 align="center"> <%= @user.username.capitalize %>'s articles</h3>
+<%if @user_articles.count != 0 %>
+  <h3 align="center"> <%= @user.username.capitalize %>'s articles</h3>
+<% end %>
 <%= will_paginate(@user_articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
 <%= render 'articles/article', obj: @user_articles %>
 

@@ -4,5 +4,7 @@ class PagesController < ApplicationController
   end
 
   def about
+    @article_show = Article.all
+   
   end
 end

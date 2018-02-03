@@ -1,8 +1,6 @@
-<h2 align="center">
-  List of all articles
-</h2>
 
 <table border="solid 1px">
+  <% if obj.count != 0 %>
   <thead>
     <tr>
       <th>Title</th>
@@ -11,7 +9,7 @@
       
     </tr>
   </thead>
-          
+  <% end %>        
   <tbody>
     <% obj.each do |article| %>    
       <div align="center">
@@ -20,6 +18,8 @@
            <tr>
               <td><%= link_to article.title , article_path(article) %></td>
               <td><%= article.description %></td>
+             <td><%= link_to article.city , article_path(article) %></td>
+              <td><%= article.country %></td>
               <td><small>Created by <%= article.user.username if article.user%>,
                 <%= time_ago_in_words(article.created_at) %> ago,
                 last update: <%= time_ago_in_words(article.updated_at) %> ago </small>

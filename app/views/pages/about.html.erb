@@ -1,3 +1,27 @@
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI6Vns6uLyRBU9dRMJQbE56ef43iSl-yc&callback=initMap" async defer></script>
 <h1>Pages#about</h1>
-<p>Find me in app/views/pages/about.html.erb</p>.
+<%=request.remote_ip %>
+</br>
+<%=request.location.city %>
+</br>
+<%=request.location.state %>
+</br>
+<%=request.location.country %>
+</br>
+
+<% obj = @article_show %>
+<%  obj.each do |res| %>
+<%=    res.title %>
+<%=    res.description %>
+<%=    res.city %>
+<%=    res.latitude %>
+<%=    res.longitude %>
+<%=    res.country %>
+</br>
+<% end %>
+
+<div id="map" class="about-page" data-name="<%= @article_show[0].title %>" data-latitude= "<%= @article_show[0].latitude %>" data-longitude= "<%= @article_show[0].longitude %>" data-address="<%= @article_show[0].location %>">
+
+</div>
+Passou
 <%= link_to "Home", root_path %>

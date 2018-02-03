@@ -17,4 +17,4 @@
 //= require bootstrap
 //= require popper
 //= require turbolinks
-
+//= require custom
