@@ -1,41 +1,44 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI6Vns6uLyRBU9dRMJQbE56ef43iSl-yc&callback=initMap" async defer></script>
 <p id="notice"><%= notice %></p>
-<h2 class="center">
-  Title: <%= @article.title %>
-</h2>
+
 
 <div class="row">
+<h3 class="show-item-title text-center">
+  Title: <%= @article.title %>
+</h3>
   <% if @article.user %>
-    <ul class="listing" style="list-style-type:none">
+    <ul class="owner-card listing" style="list-style-type:none">
       
-      <div class="card" style="width: 15rem;">
-        <li class="card-img-top"> <%= link_to gravatar_for(@article.user), user_path(@article.user) %> </li>
-        <h5 class="card-title">Created By:</h5>
+      <div class="card" style="width: 8rem;">
+        <h6 class="text-center card-title">Created By:</h6>
+        <li class="text-center card-img-top"> <%= link_to gravatar_for(@article.user), user_path(@article.user) %> </li>
           <div class="card-block">
-            
-            <p class="card-text"><strong><%= link_to @article.user.username, user_path(@article.user) %></strong></p>
-            <p class="card-text"><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %></p>
+            <p class="text-center card-text"><strong><%= link_to @article.user.username, user_path(@article.user) %></strong></p>
+            <p class="text-center card-text"><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %></p>
           </div>
       </div>
    
     </ul>
   <% end %>
 </div>
+<div class="show-item">
+  
 
-  <h4 class="center description" align="center"><strong>Description:</strong></h4>
-  <div align="center">
-     <%= simple_format(@article.description) %>
-     <%= simple_format(@article.city) %><%= simple_format(@article.country) %>
+    <h4 class="center description" align="center"><strong>Description:</strong></h4>
+    <div align="center">
+       <%= simple_format(@article.description) %>
+       <%= simple_format(@article.city) %><%= simple_format(@article.country) %>
+    </div>
+
+  <div id="map" class="article-item" data-name="<%= @article.title %>" data-latitude= "<%= @article.latitude %>" data-longitude= "<%= @article.longitude %>" data-address="<%= @article.location %>">
   </div>
+  </br>
+  <div class="text-center">
+  <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
 
-<div id="map" class="article-item" data-name="<%= @article.title %>" data-latitude= "<%= @article.latitude %>" data-longitude= "<%= @article.longitude %>" data-address="<%= @article.location %>">
+    <%= link_to 'Edit this article', edit_article_path(@article), class: " btn btn-xs btn-success" %>
+    <%= link_to 'Delete this article', article_path(@article), method: :delete, class: "mx-auto btn btn-xs btn-danger" %>
+  <% end %>   
+  <%= link_to 'View all articles', articles_path, class: "mx-auto btn btn-xs btn-success" %>
+  </div>  
 </div>
-</br>
-<div class="text-center">
-<% if logged_in? && (current_user == @article.user || current_user.admin?) %>
-
-  <%= link_to 'Edit this article', edit_article_path(@article), class: " btn btn-xs btn-success" %>
-  <%= link_to 'Delete this article', article_path(@article), method: :delete, class: "mx-auto btn btn-xs btn-danger" %>
-<% end %>   
-<%= link_to 'View all articles', articles_path, class: "mx-auto btn btn-xs btn-success" %>
-</div>  

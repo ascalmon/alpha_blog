@@ -9,17 +9,6 @@
 <%=request.location.country %>
 </br>
 
-<% obj = @article_show %>
-<%  obj.each do |res| %>
-<%=    res.title %>
-<%=    res.description %>
-<%=    res.city %>
-<%=    res.latitude %>
-<%=    res.longitude %>
-<%=    res.country %>
-</br>
-<% end %>
-
 <div id="map" class="about-page" data-name="<%= @article_show[0].title %>" data-latitude= "<%= @article_show[0].latitude %>" data-longitude= "<%= @article_show[0].longitude %>" data-address="<%= @article_show[0].location %>">
 
 </div>
