@@ -11,7 +11,10 @@
       
       <div class="card" style="width: 8rem;">
         <h6 class="text-center card-title">Created By:</h6>
-        <li class="text-center card-img-top"> <%= link_to gravatar_for(@article.user), user_path(@article.user) %> </li>
+        <% size = 30 %>
+        <% default = 'mm' %>
+        <li class="text-center card-img-top"> <%= link_to gravatar_for(@article.user, size: size, default: default), user_path(@article.user) %> </li>
+       
           <div class="card-block">
             <p class="text-center card-text"><strong><%= link_to @article.user.username, user_path(@article.user) %></strong></p>
             <p class="text-center card-text"><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %></p>
