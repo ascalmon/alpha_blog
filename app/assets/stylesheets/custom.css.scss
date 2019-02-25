@@ -52,12 +52,12 @@ body{
   color: gray;
   text-transform: uppercase;
   letter-spacing: -1px;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 
 #logo:hover{
-  
+
   background-color: lightgray;
   text_decoration: none;
 }
@@ -120,10 +120,8 @@ footer ul {
 
 footer ul li {
   float: left;
-  margin-left: 15px; 
+  margin-left: 15px;
 }
 .navbar .navbar-default{
-  background-image: url("assets/images/praia.png");
-  background: url('assets/images/praia.png');
-  background-size: cover;
+background: transparent;
 }

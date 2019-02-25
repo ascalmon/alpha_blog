@@ -11,7 +11,7 @@ gem 'rails', '~> 5.1.4'
 #Encription password_digest
 gem 'bcrypt', '~> 3.1.7'
 #Bootstrap 4
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 #will Paginate
 gem 'will_paginate', '3.1.5'
 #bootstraps
@@ -19,7 +19,7 @@ gem 'bootstrap-will_paginate', '1.0.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sass-rails', '~> 5.0'
 #Geocoder
 gem 'geocoder'
@@ -39,6 +39,12 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
+#gem "nokogiri", ">= 1.8.5"
+#gem "activejob", ">= 5.1.6.1"
+#gem "rack", ">= 2.0.6"
+#gem "rails-html-sanitizer", ">= 1.0.4"
+#gem "loofah", ">= 2.2.3"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use Capistrano for deployment
@@ -60,7 +66,7 @@ group :production do
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.  
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'sqlite3'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
